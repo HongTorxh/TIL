@@ -1,0 +1,12 @@
+Lecture : Git GUI 프로그램 사용법
+
+배울 내용
+ Github Desktop
+ Sourcetree
+ Git 원격 저장소 옮기기
+
+Github Desktop
+Sourcetree
+는 더 편리하게 로컬에서 원격으로 옮길 수 있다.
+
+

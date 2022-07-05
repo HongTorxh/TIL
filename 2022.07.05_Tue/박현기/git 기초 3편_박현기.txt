@@ -1,0 +1,61 @@
+Leture : Git 고급편
+
+배울 내용
+Git 작업 영역
+Git 고급 명령어
+
+Git 작업 영역
+Working Directory
+Commit 파일을들 수정하거나 추가할 때 이동하는 곳.
+
+Staging Area(Index)
+git add 명령을 사용해 파일을 추가면 그 파일들은 이 곳에 들어가게됨.
+그리고 다시 Commit을 통해 Repository로 이동함.
+
+Repositroy(Git Directory)
+모든 Commit 파일들을 저장해놓는 곳.
+
+Stash
+임시 공간.
+branch로 이동할 때 수정한 내용들을 이 임시공간에 옮겨놓고 작업을 계속함.
+
+Git 고급 명령어
+git log 
+commit의 내용을 확일할 수 있는 명령어.
+(+git log --graph를 이용하면 쉽게 확인할 수 있음.)
+
+git tag
+commit에 이름표를 붙이는 명령어.
+이름표만 붙이는 것을 ligt weight tag라고 한다.
+
+git commit --amend
+마지막에 있는 commit을 지금 상태의 commit으로 새로 만드는 것.
+즉, 마지막 commit을 수정하는 것.
+주의할 점 사실 새로 만드는 것이기 때문에 이전에 달려 있던 tag가 사라질 수 있다.
+
+git revert
+어떤 특정 commit 내용을 되돌리는 것.
+그 위에 있는 commit 역추적해 그 commit 내용으로 만드는 것.
+
+git reset
+어떤 특정 commit 자체를 완전히 되돌리는 것.
+그 위에 있는 commit 내용들은 사라짐.
+이는 또 세 가지로 나뉨.
+
+-soft Repository만 되돌리는 것. git reset --soft HEAD~~~ 이런 식으로 표시 ~하나 당 commit 한 개를 의미함.
+-mixed Repository랑 Staging Area만 되돌리는 것.
+-hard Repository, Working Directory, Staging Area 다 되돌리는 것.
+
+git reset ORIG_HEAD를 사용하면 다시 내용이 복구됨.
+
+git checkout HEAD filename
+작업을 하다가 수정한 특정 파일에 있는 내용이 쓸모가 없어서 
+그 파일만 예전 내용으로 되돌리고 싶을때 사용하는 것.
+
+git rebase
+branch를 여러개 병합하다가 commit garph가 복잡해질 때가 있다.
+기존의 base를 rebase해서 그 graph를 조금 더 간편화하는 것.
+ 
+git stash
+다른 branch로 이동하기 전에 임시영역에 저장하기위해 쓰는 것.
+git stast pop은 임시 영역에 저장되었던 내용을 불려올때 쓰는 것.

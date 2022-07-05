@@ -1,0 +1,40 @@
+Lecture : Git 프로그램 구조
+
+배울 내용
+.git 폴더 내부
+ HEAD
+ objects
+ refs
+
+.git 폴더 구조 
+
+폴더 내
+ HEAD (파일)
+ config
+ description
+ hooks
+ info
+ objects --> 가장 중요!!
+ refs 참조 폴더(기록 하는 폴더)
+
+(object 폴더의)구성 요소
+ blob (파일)
+ tree (폴더)
+ commit (commit에 대한 정보)
+
+git cat-file -p master^{tree}
+이 명령어를 쓴다면 이것이 blob인지 tree인지 알 수 있다.
+즉, 파일인지 폴더인지 알 수 있다.
+
+Git 개체 생성 방식
+문자열 --> 헤더: 타입 + 공백문자+문자열길이+널문자 ex)blob 1\u0000
+ --> SHA-1(헤더 + 문자열) 암호화 --> Zlib(헤더 + 문자열) 압축
+ --> SHA-1 앞 두자리 폴더 + 나머지 파일 이름, Zlib 내용 저장(압축 파일)
+
+Git 압축 방식
+ git gc
+ git verify-pack
+
+git의 원본 파일 내용은 마지막 commit에 있음.
+그 전 commit은 후 commit 과 다른 수정된 부분들만 데이터를 가지고 있음.
+이 데이터들의 집합을 '델타'라고 부름.
