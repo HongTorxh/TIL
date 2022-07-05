@@ -1,0 +1,33 @@
+<gitlab과 github의 차이점>
+1. gitlab은 최대 공동 작업 유저 수에서의 제한이 없고 github는 3명이 제한이기에
+팀프로젝트같은 여러 명이 참여해야 할 때는 gitlab이 유용함.
+2. LFS를 gitlab은 최대 10GB를 지원해주고 github는 최대 2GB를 지원해줌.
+3. 저장소 당 허용 크기 또한 gitlab은 10GB를 지원해주고 github는 1GB를
+지원해줌.
+4.오픈소스 용도로 만드려면 github에서 만드는 것이 훨씬 좋음.
+(유저도 많고 서버 호스팅도 지원해주기 때문)
+
+
+<git 작업 영역>
+repository - 모든 커밋 파일이 저장되는 장소
+working directory - repository에서 파일을 수정 & 추가 시 여기서 생성됨
+staging area - working directory에서 git add를 사용하면 여기서 추가됨
+
+<git 고급 명령어>
+git log - 커밋의 내용을 확인할 수 있는 명령어
+git tag - 커밋의 이름을 붙이는 명령어
+git commit --amend - 마지막에 있는 커밋을 지금 상태의 커밋으로 새로 만듦
+git revert - 위의 커밋을 역으로 추적하여 커밋을 만듦
+git reset - 위의 커밋을 전부 없애는 명령어(ORIG_HEAD에 저장)
+get checkout HEAD filename - 커밋했을 경우 최초의 상태로 되돌아감
+git rebase - 한 브랜치에서 다른 브랜치로 합치는 명령어(커밋히스토리를 깔끔하게 관리할 수 있음)
+git stash - 아직 마무리하지 않은 작업을 스택에 잠시 저장하게 하는 명령어
+
+<오류 해결법>
+cd . ./ (파일명)/ 을 하면 스페이스 때문에 오류가 발생할 수 있음.
+--cd "파일명"하면 선택이 됨.
+warning: could not open directory 오류는 사용자가 필요없는 데이터까지 제공해주기에 생기는 오류
+-- git init으로 초기화를 해주면 됨.
+
+
+
